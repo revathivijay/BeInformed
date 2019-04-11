@@ -4,9 +4,26 @@
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">ADD USER</legend>
+                <legend class="border-bottom mb-4">ADD Faculty</legend>
+
+
 
                  <div class="form-group">
+                    {{ form.course.label(class="form-control-label") }}
+                    {% if form.course.errors %}
+                        {{ form.course(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.course.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.course(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group">
                     {{ form.name.label(class="form-control-label") }}
                     {% if form.name.errors %}
                         {{ form.name(class="form-control form-control-lg is-invalid") }}
@@ -52,10 +69,10 @@
                 <div class="form-group">
                     {{ form.submit(class="btn btn-outline-info") }}
                 </div>
-                
+
             </fieldset>
-            
+
         </form>
     </div>
-    
+
 {% endblock content %}
