@@ -13,7 +13,7 @@
     <title>Home</title>
 </head>
 <body>
-    <header class="site-header">
+    <header class="intro-header" style= "background-image: url('/static/VJTI.jpg')">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
           <a class="navbar-brand mr-4" href="/">VJTI</a>
@@ -34,17 +34,19 @@
         </div>
       </nav>
     </header>
+    <style>
+        background-image: url('/static/VJTI.jpg')
+    </style>
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
           {% block content %}{% endblock %}
         </div>
-          <div>
+          <div class="media-body">
               <h1>This Website is dedicated to reduce the barriers to communication between VJTI students and faculties.</h1>
               <p></p>
-              <p>Each student can view the posts uploaded by a teacher and can also change their information or use forgot password if they forget their password</p>
-              <P>A faculty may post an update for students to see which the student.</P>
-          </div>
+              <p>Effective communication between teachers and students has the potential to improve the learning experience and create a positive environment in the classroom. However, the relationship takes work on both ends. Communication barriers in the classroom certainly make it difficult for students to get the most out of their education</p>
+              <p>Many Students dont attend and hence are not informed about important submissions, lectures and so on. This website aims to reduce this barrier and help both sutdents and teachers feel more connected to student.</p>
 
       </div>
     </main>

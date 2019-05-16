@@ -129,7 +129,7 @@ def account():
     elif request.method == 'GET':
         form.name.data = current_user.name
     else:
-        flash('Unsuccessful', 'danger')
+        flash('unsuccesful', 'danger')
     image_file = url_for('static', filename = 'profile_pics/'+ current_user.image_file)
     return render_template('account.html', title = 'Account', image_file = image_file, form=form)
 
