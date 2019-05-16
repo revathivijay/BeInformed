@@ -65,7 +65,7 @@ class Post(db.Model):
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('student.id'), nullable=False)
-    author_name = db.Column(db.String(100), nullable=False)
+    author_name = db.Column(db.String(100))
 
 
     def __repr__(self):

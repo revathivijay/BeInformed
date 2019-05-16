@@ -13,9 +13,7 @@ from flask_mail import Message
 def home():
     return render_template('home.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+
 
 @app.route("/studentlogin", methods=['GET', 'POST'])
 def studentlogin():
@@ -51,11 +49,11 @@ def facultylogin():
 
 @app.route('/studenthome')
 def studenthome():
-    return render_template('studenthome.html')
+    return redirect(url_for('view_posts'))
 
 @app.route('/facultyhome')
 def facultyhome():
-    return render_template('facultyhome.html')
+    return redirect(url_for('view_posts'))
 
 
 @app.route('/add/student', methods = ['GET', 'POST'])
@@ -130,6 +128,8 @@ def account():
         return redirect(url_for('account'))
     elif request.method == 'GET':
         form.name.data = current_user.name
+    else:
+        flash('Unsuccessful', 'danger')
     image_file = url_for('static', filename = 'profile_pics/'+ current_user.image_file)
     return render_template('account.html', title = 'Account', image_file = image_file, form=form)
 

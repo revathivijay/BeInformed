@@ -56,7 +56,7 @@ class UpdateAccountForm(FlaskForm):
     name = StringField('Name', validators=[])
     email = StringField('Email', validators=[Email()])
     picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png', 'jpeg'])])
-    submit = SubmitField("Update")
+    submit = SubmitField('Update')
 
 class PostForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
